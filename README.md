@@ -21,3 +21,4 @@
     12. Тестування проекту в браузерах: Chrome, Firefox, Opera, Edge, та на девайсах з розширенням від 320px до 1920px;
 
 Робоча версія проекту в папці 'dist'.
+Посилання на робочу версі: https://darker-than-black.github.io/task-for-Rezart/dist/index.html
