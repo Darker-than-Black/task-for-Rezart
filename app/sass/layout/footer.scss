@@ -1,0 +1,55 @@
+@import '../base/variables';
+@import '../base/fonts';
+@import '../utils/mixin';
+
+footer {
+    background-color: $dark-gray;
+    .contact {
+        padding-top: 3.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &__form {
+            margin: 3.125rem 0 .625rem;
+           text-align: center;
+           input,
+            textarea {
+                border-radius: 5px;
+                border: none;
+                margin: .25rem 0;
+                padding: .25rem 1rem;
+                width: 100%;
+            }
+            .form {
+                &__text {
+                    resize: none;
+                    height: 12rem;
+                }
+                &__btn {
+                    margin: 2.5em 0;
+                    width: 6.5rem;
+                    &:hover {
+                        background-color: $white-blue;
+                    }
+                }
+            }
+            ::placeholder {
+                @include textOption('u', .875rem, $gray);
+            }
+        }
+    }
+}
+
+.map {
+    background-image: url("../img/footer.png");
+    display: block;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 22rem;
+    @media screen and (max-width: 600px) {
+        height: 10rem;
+    }
+}

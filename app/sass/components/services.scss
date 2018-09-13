@@ -1,0 +1,27 @@
+@import '../base/variables';
+@import '../base/fonts';
+@import '../utils/mixin';
+
+.services {
+    &__descript {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 2;
+        padding: 3.5rem 15px 6.25rem;
+        &--outer-wrapper {
+            min-height: 14rem;
+            display: flex;
+            align-items: center;
+        }
+        &--title {
+            margin: 1rem 0;
+            @include textOption('bree', 1.5rem, $gray-blue);
+        }
+        &--text {
+            text-align: center;
+            @include textOption('u', .85rem, $gray);
+        }
+    }
+}

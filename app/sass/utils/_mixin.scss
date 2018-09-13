@@ -1,0 +1,15 @@
+@import '../base/fonts';
+@mixin textOption($family, $size : 1rem, $color : #fff, $weight: normal, $transform: none, $style: normal) {
+    @if $family == 'bree' {
+        font-family: 'Bree Serif', serif;
+    } @else if $family == 'u' {
+        font-family: 'Ubuntu', sans-serif;
+    } @else {
+        font-family: sans-serif;
+    }
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+    text-transform: $transform;
+    font-style: $style;
+}

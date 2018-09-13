@@ -1,0 +1,111 @@
+@import '../base/variables';
+@import '../base/fonts';
+@import '../utils/mixin';
+@import '../ekko-lightbox';
+
+.portfolio {
+    padding: 3.75rem 0;
+    .wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    background-color: $lime-green;
+    &__title {
+        @include textOption('bree', 3.85rem, $white, normal, uppercase);
+        letter-spacing: .15rem;
+        @media screen and (max-width: 600px) {
+            font-size: 2rem;
+            text-align: center;
+        }
+    }
+    &__description {
+        @include textOption('u', .85rem, $white);
+        max-width: 50%;
+        text-align: center;
+    }
+    &__tabs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 3.125rem 0;
+    }
+}
+
+.nav-tabs {
+    border: none;
+    .nav {
+        &-item {
+            &:hover{
+                background-color: transparent;
+            }
+        }
+        &-link {
+            @include textOption('bree', 1.25rem, $white, normal, uppercase);
+            &:hover{
+                border: 1px solid transparent;
+            }
+        }
+        &-link.active {
+            color: $gray-blue;
+            border: none;
+            border-radius: 5px;
+        }
+    }
+}
+
+.tab {
+    &-content {
+        margin-top: 1.85rem;
+    }
+    &-pane {
+        .row {
+            justify-content: center;
+            [class^="col-"] {
+                display: flex;
+                justify-content: center;
+                margin: 1.25rem 0;
+            }
+        }
+        a {
+            position: relative;
+            &:hover::before {
+                display: block;
+            }
+            &::before {
+                display: none;
+                font-family: FontAwesome;
+                top:50%;
+                left: 50%;
+                margin-left: -1rem;
+                margin-top: -1rem;
+                font-size: 2rem;
+                position: absolute;
+                color: $white;
+                text-shadow: 2px 3px 0px $dark-yellow;
+                padding-right:10px;
+                content: "\F065"; 
+            }
+        }
+    }
+}
+
+.card {
+    background-color: transparent;
+    border: none;
+    &-header {
+        justify-content: center;
+        display: flex;
+        background-color: transparent;
+        border: none;
+        .btn-link {
+            text-decoration: none;
+        }
+        .btn-link:hover {
+            text-decoration: none;
+        }
+    }
+    &-body {
+        padding: 0 1rem;
+    }
+}

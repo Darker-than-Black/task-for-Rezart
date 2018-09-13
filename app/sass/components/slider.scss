@@ -1,0 +1,83 @@
+@import '../base/variables';
+@import '../base/fonts';
+@import '../utils/mixin';
+
+@import '../owl.carousel.min';
+
+
+.owl {
+    &-carousel {
+        position: relative;
+        .item {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+    &-dots {
+        position: absolute;
+        bottom: 1.5rem;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+}
+.slide_content {
+    min-height: 35rem;
+    padding: 3.5rem 15px 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &-title {
+        @include textOption('bree', 4rem, $white);
+        @media screen and (max-width: 600px) {
+            font-size: 1.75rem;
+        }
+    }
+    &-text {
+        @include textOption('u', .9rem, $white, 100); 
+    }
+    &-btn {
+        outline:none;
+        padding: .75rem 1rem;
+        border: none;
+        border-radius: 5px;
+        background-color: $white;
+        cursor: pointer;
+        transition: all .5s;
+        @include textOption('bree', 1.05rem, $gray-blue, bold, uppercase);
+        &:hover {
+            background-color: $gray-blue;
+            color: $white;
+        }
+    }
+}
+
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel button.owl-dot {
+    width: 20px;
+    height: 20px;
+    border: 3px solid $white;
+    border-radius: 50%;
+    margin: 5px;
+    outline:none;
+}
+
+.owl-carousel button.owl-dot.active {
+    background-color: #fff;
+}
+
+.modal-dialog {
+    margin: 3.5rem auto;
+}
+.modal.fade {
+    z-index: 99;
+}
+.modal.show {
+    display: block;
+}
+.modal-backdrop {
+    z-index: -1;
+    background-color: transparent;
+}

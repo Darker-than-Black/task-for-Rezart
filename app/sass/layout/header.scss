@@ -1,0 +1,181 @@
+@import '../base/variables';
+@import '../base/fonts';
+@import '../utils/mixin';
+
+.navbar {
+    z-index: 99;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: $widthDefault;
+    margin: 50px 0;
+    transition: all .2s linear;
+    background-color: rgba(255,255,255,0.6);
+    &-brand {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.15rem;
+        @include textOption('bree', 2.2rem, $gray-blue, bold, uppercase);
+        @media screen and (max-width: 600px) {
+            font-size: 1.5rem;
+            margin-right: 0;
+        }
+        @media screen and (max-width: 400px) {
+            font-size: 1rem;
+        }
+        i {
+            position: relative;
+            font-size: 3.2rem;
+        }
+        &:hover {
+            color: $white-blue;
+            i {
+                animation: flyingRacket 2s infinite ease-in-out;
+            }
+        }
+    }
+    &-collapse {
+        justify-content: flex-end;
+    }
+    &__toggler {
+        outline: none;
+		display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+    	cursor: pointer;
+		[class*="toggler__line"] {
+			display: block;
+			width: 30px;
+			height: 1px;
+		    background-color: black;
+		    margin: 4px;
+			transition: all .75s linear;
+			position: relative;
+		}
+	}
+}
+/* Animate navbar-toggler in mobile and tablet device */
+.clickTransform ~ .navbar__nav {
+	display: flex;
+}
+.clickTransform {
+	.toggler__line--first{
+		transform: rotate(45deg);
+		animation: lineFirst .75s ease-in-out;
+		top: 8px;
+	}
+	.toggler__line--second{
+		opacity: 0;
+	}
+	.toggler__line--third{
+		transform: rotate(-45deg);
+		top: -10px;
+		animation: lineThird .75s ease-in-out;
+	}
+}
+.clickTransformBack {
+	.toggler__line--first{
+		transform: rotate(0);
+		animation: lineFirstBack .75s ease-in-out;
+		top: auto;
+	}
+	.toggler__line--third{
+		transform: rotate(0);
+		top: auto;
+		animation: lineThirdBack .75s ease-in-out;
+	}
+}
+@keyframes lineFirst {
+	0% {
+		transform: rotate(0deg);
+ 		top: 0;
+	}
+	100% {
+		transform: rotate(45deg);
+ 		top: 8px;
+	}
+}
+@keyframes lineThird {
+	0% {
+		transform: rotate(0deg);
+ 		top: 0;
+	}
+	100% {
+		transform: rotate(-45deg);
+ 		top: -10px;
+	}
+}
+@keyframes lineFirstBack {
+	0% {
+		transform: rotate(45deg);
+ 		top: 8px;
+	}
+	100% {
+		transform: rotate(0deg);
+ 		top: 0;
+	}
+}
+@keyframes lineThirdBack {
+	0% {
+		transform: rotate(-45deg);
+ 		top: -10px;
+	}
+	100% {
+		transform: rotate(0deg);
+ 		top: 0;
+	}
+}
+
+
+/* Animate hover in navbar-brand */
+@keyframes flyingRacket {
+    0% {
+        transform:rotate(0deg);
+    }
+    50% {
+        transform:rotate(-20deg);
+    }
+    51% {
+        bottom: 0;
+        left: 0;
+    }
+    100% {
+        bottom: 120px;
+        left: 120px;
+    }
+}
+
+.nav {
+    &-item{
+        &:hover,
+        &:active {
+            background-color: $gray-blue;
+            border-radius: 5px;
+            .nav-link {
+                color: $white;
+            }
+        }
+        .dropdown {
+            &-menu {
+                @media screen and (min-width: 993px) {
+                    padding: 0;
+                    left: -1.5rem;
+                    @include textOption('', 1.1rem, #fff, bold, uppercase);
+                }
+                *+*{
+                    border-top: 1px solid rgba(0,0,0,0.15);
+                }
+            }
+            &-item {
+                &:hover {
+                    background-color: $gray-blue;
+                    color: $white;
+                }
+            }
+        }
+    }
+    &-link {
+        margin: .5rem 1rem;
+        @include textOption('', 1.1rem, $white-blue);
+    }
+}
