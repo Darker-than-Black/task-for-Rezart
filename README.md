@@ -6,14 +6,16 @@
     5. Встановлення бібліотек та фреймворків: Bootstrap 4, Ekko-lightbox, Font Awesome v_3.2.1, jQuery v_3.3.1, OwlCarousel;<br/>
     6. Розробка HTML/CSS/JS макету<br/>
     7. Реалізація функціоналу:<br/>
- &#9;       7.1 Sticky menu<br/>
- &#9;       7.2 Drop down<br/>
- &#9;       7.3 Smooth scroll to anchor<br/>
- &#9;       7.4 Slider<br/>
- &#9;       7.5 Pop up<br/>
- &#9;       7.6 Tabs<br/>
- &#9;       7.7 Lightbox<br/>
- &#9;       7.8 Accordion<br/>
+<ul>
+    <li>Sticky menu</li>
+    <li>Drop down</li>
+    <li>Smooth scroll to anchor</li>
+    <li>Slider</li>
+    <li>Pop up trigger</li>
+    <li>Tabs</li>
+    <li>Lightbox</li>
+    <li>Accordion</li>
+</ul>
     8. Наповнення макету різного типу анімацією;<br/>
     9. Привязка форми до e-mail адресу;<br/>
     10. Перевірка коду на валідність та виправлення помилок;<br/>
